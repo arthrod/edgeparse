@@ -133,13 +133,13 @@ name = "aiohttp"
 version = "3.13.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiohappyeyeballs" },
-    { name = "aiosignal" },
-    { name = "attrs" },
-    { name = "frozenlist" },
-    { name = "multidict" },
-    { name = "propcache" },
-    { name = "yarl" },
+    { name = "aiohappyeyeballs", marker = "sys_platform != 'win32'" },
+    { name = "aiosignal", marker = "sys_platform != 'win32'" },
+    { name = "attrs", marker = "sys_platform != 'win32'" },
+    { name = "frozenlist", marker = "sys_platform != 'win32'" },
+    { name = "multidict", marker = "sys_platform != 'win32'" },
+    { name = "propcache", marker = "sys_platform != 'win32'" },
+    { name = "yarl", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz", hash = "sha256:d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38", size = 7859748, upload-time = "2026-03-28T17:19:40.6Z" }
 wheels = [
@@ -235,8 +235,8 @@ name = "aiosignal"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "frozenlist" },
-    { name = "typing-extensions", marker = "python_full_version < '3.13'" },
+    { name = "frozenlist", marker = "sys_platform != 'win32'" },
+    { name = "typing-extensions", marker = "python_full_version < '3.13' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz", hash = "sha256:f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7", size = 25007, upload-time = "2025-07-03T22:54:43.528Z" }
 wheels = [
@@ -498,7 +498,7 @@ name = "blake3"
 version = "1.0.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "python_full_version < '3.12'" },
+    { name = "typing-extensions", marker = "python_full_version < '3.12' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/75/aa/abcd75e9600987a0bc6cfe9b6b2ff3f0e2cb08c170addc6e76035b5c4cb3/blake3-1.0.8.tar.gz", hash = "sha256:513cc7f0f5a7c035812604c2c852a0c1468311345573de647e310aca4ab165ba", size = 117308, upload-time = "2025-10-14T06:47:48.83Z" }
 wheels = [
@@ -931,10 +931,10 @@ name = "compressed-tensors"
 version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "frozendict" },
-    { name = "pydantic" },
-    { name = "torch" },
-    { name = "transformers" },
+    { name = "frozendict", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b8/99/3fdabfc95609d6efdf02fa7f1ed0245524cb1209d3d4a17109d3205d2eed/compressed_tensors-0.11.0.tar.gz", hash = "sha256:95ddf19699f775df6494dd864e5f52e8a24f8015496520190c1a22c6cfc44b1f", size = 187566, upload-time = "2025-08-19T18:59:31.854Z" }
 wheels = [
@@ -1095,8 +1095,8 @@ name = "cupy-cuda12x"
 version = "14.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cuda-pathfinder" },
-    { name = "numpy" },
+    { name = "cuda-pathfinder", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d9/11/6d089629f44591864bc8a11fa64c9d4fcd1afb4a7217954c806fb47c4fe5/cupy_cuda12x-14.0.1-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:31e6a33579a06fde3ff238b8b6b72446384d17554b2a3b14f818c9ee44b0c2e6", size = 146237981, upload-time = "2026-02-20T10:22:29.065Z" },
@@ -1127,20 +1127,20 @@ name = "datasets"
 version = "4.8.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "dill" },
-    { name = "filelock" },
-    { name = "fsspec", extra = ["http"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "httpx" },
-    { name = "huggingface-hub" },
-    { name = "multiprocess" },
-    { name = "numpy" },
-    { name = "packaging" },
-    { name = "pandas" },
-    { name = "pyarrow" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "tqdm" },
-    { name = "xxhash" },
+    { name = "dill", marker = "sys_platform != 'win32'" },
+    { name = "filelock", marker = "sys_platform != 'win32'" },
+    { name = "fsspec", extra = ["http"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "httpx", marker = "sys_platform != 'win32'" },
+    { name = "huggingface-hub", marker = "sys_platform != 'win32'" },
+    { name = "multiprocess", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "packaging", marker = "sys_platform != 'win32'" },
+    { name = "pandas", marker = "sys_platform != 'win32'" },
+    { name = "pyarrow", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
+    { name = "tqdm", marker = "sys_platform != 'win32'" },
+    { name = "xxhash", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/27/74/0c5f29109e02c4c33e8634e31d5cd7d90ecc3ed7c95e1b377ece08354068/datasets-4.8.3.tar.gz", hash = "sha256:882fb1bb514772bec17fbcad2e32985893954d0a0ecf42266e5091386be1f3b7", size = 604294, upload-time = "2026-03-19T17:43:59.32Z" }
 wheels = [
@@ -1161,8 +1161,8 @@ name = "depyf"
 version = "0.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "astor" },
-    { name = "dill" },
+    { name = "astor", marker = "sys_platform != 'win32'" },
+    { name = "dill", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/19/38/69157d711be575f1b9cf3177b64ef4ade44373fc02839f183fdd98ec2dd6/depyf-0.19.0.tar.gz", hash = "sha256:afed0916b32d141cc90fa6220df01885eda442ca43b297d5050eeb90b4a5cb44", size = 6171405, upload-time = "2025-04-20T08:07:41.224Z" }
 wheels = [
@@ -1446,8 +1446,8 @@ name = "email-validator"
 version = "2.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "dnspython" },
-    { name = "idna" },
+    { name = "dnspython", marker = "sys_platform != 'win32'" },
+    { name = "idna", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz", hash = "sha256:9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426", size = 51238, upload-time = "2025-08-26T13:09:06.831Z" }
 wheels = [
@@ -1507,14 +1507,14 @@ wheels = [
 
 [package.optional-dependencies]
 standard = [
-    { name = "email-validator" },
-    { name = "fastapi-cli", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "httpx" },
-    { name = "jinja2" },
-    { name = "pydantic-extra-types" },
-    { name = "pydantic-settings" },
-    { name = "python-multipart" },
-    { name = "uvicorn", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
+    { name = "email-validator", marker = "sys_platform != 'win32'" },
+    { name = "fastapi-cli", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "httpx", marker = "sys_platform != 'win32'" },
+    { name = "jinja2", marker = "sys_platform != 'win32'" },
+    { name = "pydantic-extra-types", marker = "sys_platform != 'win32'" },
+    { name = "pydantic-settings", marker = "sys_platform != 'win32'" },
+    { name = "python-multipart", marker = "sys_platform != 'win32'" },
+    { name = "uvicorn", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 
 [[package]]
@@ -1522,9 +1522,9 @@ name = "fastapi-cli"
 version = "0.0.24"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "rich-toolkit" },
-    { name = "typer" },
-    { name = "uvicorn", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
+    { name = "rich-toolkit", marker = "sys_platform != 'win32'" },
+    { name = "typer", marker = "sys_platform != 'win32'" },
+    { name = "uvicorn", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6e/58/74797ae9e4610cfa0c6b34c8309096d3b20bb29be3b8b5fbf1004d10fa5f/fastapi_cli-0.0.24.tar.gz", hash = "sha256:1afc9c9e21d7ebc8a3ca5e31790cd8d837742be7e4f8b9236e99cb3451f0de00", size = 19043, upload-time = "2026-02-24T10:45:10.476Z" }
 wheels = [
@@ -1533,8 +1533,8 @@ wheels = [
 
 [package.optional-dependencies]
 standard = [
-    { name = "fastapi-cloud-cli" },
-    { name = "uvicorn", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
+    { name = "fastapi-cloud-cli", marker = "sys_platform != 'win32'" },
+    { name = "uvicorn", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 
 [[package]]
@@ -1542,14 +1542,14 @@ name = "fastapi-cloud-cli"
 version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "fastar" },
-    { name = "httpx" },
-    { name = "pydantic", extra = ["email"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "rich-toolkit" },
-    { name = "rignore" },
-    { name = "sentry-sdk" },
-    { name = "typer" },
-    { name = "uvicorn", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
+    { name = "fastar", marker = "sys_platform != 'win32'" },
+    { name = "httpx", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", extra = ["email"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "rich-toolkit", marker = "sys_platform != 'win32'" },
+    { name = "rignore", marker = "sys_platform != 'win32'" },
+    { name = "sentry-sdk", marker = "sys_platform != 'win32'" },
+    { name = "typer", marker = "sys_platform != 'win32'" },
+    { name = "uvicorn", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/11/15/6c3d85d63964340fde6f36cc80f3f365d35f371e6a918d68ff3a3d588ef2/fastapi_cloud_cli-0.11.0.tar.gz", hash = "sha256:ecc83a5db106be35af528eccb01aa9bced1d29783efd48c8c1c831cf111eea99", size = 36170, upload-time = "2026-01-15T09:51:33.681Z" }
 wheels = [
@@ -1745,7 +1745,7 @@ name = "fire"
 version = "0.7.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "termcolor" },
+    { name = "termcolor", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c0/00/f8d10588d2019d6d6452653def1ee807353b21983db48550318424b5ff18/fire-0.7.1.tar.gz", hash = "sha256:3b208f05c736de98fb343310d090dcc4d8c78b2a89ea4f32b837c586270a9cbf", size = 88720, upload-time = "2025-08-16T20:20:24.175Z" }
 wheels = [
@@ -1934,7 +1934,7 @@ wheels = [
 
 [package.optional-dependencies]
 http = [
-    { name = "aiohttp" },
+    { name = "aiohttp", marker = "sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -1954,10 +1954,10 @@ name = "gguf"
 version = "0.18.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "numpy" },
-    { name = "pyyaml" },
-    { name = "requests" },
-    { name = "tqdm" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
+    { name = "tqdm", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/3f/26/7622a41c39db9d7090225a4bf8368550e59694dcf7313b44f9a82b501209/gguf-0.18.0.tar.gz", hash = "sha256:b4659093d5d0dccdb5902a904d54b327f4052879fe5e90946ad5fce9f8018c2e", size = 107170, upload-time = "2026-02-27T15:05:39.254Z" }
 wheels = [
@@ -2625,10 +2625,10 @@ name = "lm-format-enforcer"
 version = "0.11.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "interegular" },
-    { name = "packaging" },
-    { name = "pydantic" },
-    { name = "pyyaml" },
+    { name = "interegular", marker = "sys_platform != 'win32'" },
+    { name = "packaging", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/84/d5/41cd417ba7dfdbbcfe46cebf81fb3dfd7c591b89897560ad05bb410a465d/lm_format_enforcer-0.11.3.tar.gz", hash = "sha256:e68081c108719cce284a9bcc889709b26ffb085a1945b5eba3a12cfa96d528da", size = 40258, upload-time = "2025-08-24T19:37:47.527Z" }
 wheels = [
@@ -2640,39 +2640,39 @@ name = "lmdeploy"
 version = "0.11.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "accelerate" },
-    { name = "aiohttp" },
-    { name = "cloudpickle" },
-    { name = "einops" },
-    { name = "fastapi" },
-    { name = "fire" },
-    { name = "mmengine-lite" },
-    { name = "numpy" },
-    { name = "nvidia-cublas-cu12" },
-    { name = "nvidia-cuda-runtime-cu12" },
-    { name = "nvidia-curand-cu12" },
-    { name = "nvidia-nccl-cu12" },
-    { name = "openai", version = "2.29.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "openai-harmony" },
-    { name = "partial-json-parser" },
-    { name = "peft" },
-    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "prometheus-client" },
-    { name = "protobuf" },
-    { name = "pybase64" },
-    { name = "pydantic" },
-    { name = "pyzmq" },
-    { name = "ray" },
-    { name = "safetensors" },
-    { name = "sentencepiece" },
-    { name = "shortuuid" },
-    { name = "tiktoken" },
-    { name = "torch" },
-    { name = "torchvision" },
-    { name = "transformers" },
+    { name = "accelerate", marker = "sys_platform != 'win32'" },
+    { name = "aiohttp", marker = "sys_platform != 'win32'" },
+    { name = "cloudpickle", marker = "sys_platform != 'win32'" },
+    { name = "einops", marker = "sys_platform != 'win32'" },
+    { name = "fastapi", marker = "sys_platform != 'win32'" },
+    { name = "fire", marker = "sys_platform != 'win32'" },
+    { name = "mmengine-lite", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "nvidia-cublas-cu12", marker = "sys_platform != 'win32'" },
+    { name = "nvidia-cuda-runtime-cu12", marker = "sys_platform != 'win32'" },
+    { name = "nvidia-curand-cu12", marker = "sys_platform != 'win32'" },
+    { name = "nvidia-nccl-cu12", marker = "sys_platform != 'win32'" },
+    { name = "openai", version = "2.29.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "openai-harmony", marker = "sys_platform != 'win32'" },
+    { name = "partial-json-parser", marker = "sys_platform != 'win32'" },
+    { name = "peft", marker = "sys_platform != 'win32'" },
+    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "prometheus-client", marker = "sys_platform != 'win32'" },
+    { name = "protobuf", marker = "sys_platform != 'win32'" },
+    { name = "pybase64", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "pyzmq", marker = "sys_platform != 'win32'" },
+    { name = "ray", marker = "sys_platform != 'win32'" },
+    { name = "safetensors", marker = "sys_platform != 'win32'" },
+    { name = "sentencepiece", marker = "sys_platform != 'win32'" },
+    { name = "shortuuid", marker = "sys_platform != 'win32'" },
+    { name = "tiktoken", marker = "sys_platform != 'win32'" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
+    { name = "torchvision", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
     { name = "triton", marker = "'aarch64' not in platform_machine and 'arm' not in platform_machine and sys_platform == 'linux'" },
-    { name = "uvicorn" },
-    { name = "xgrammar" },
+    { name = "uvicorn", marker = "sys_platform != 'win32'" },
+    { name = "xgrammar", marker = "sys_platform != 'win32'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/79/89/76954962e65f7e48fef4390bdc133f4f822a94e793733f70a07e6f3176d5/lmdeploy-0.11.1-cp311-cp311-manylinux2014_x86_64.whl", hash = "sha256:d1893b07f5a9ba1bd3cd7a51def5417fd89039dd3b3c263c4af518704d28562a", size = 87639879, upload-time = "2025-12-24T14:20:50.015Z" },
@@ -3166,14 +3166,14 @@ name = "mistral-common"
 version = "1.9.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "jsonschema" },
-    { name = "numpy" },
-    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "pydantic" },
-    { name = "pydantic-extra-types", extra = ["pycountry"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "requests" },
-    { name = "tiktoken" },
-    { name = "typing-extensions" },
+    { name = "jsonschema", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "pydantic-extra-types", extra = ["pycountry"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
+    { name = "tiktoken", marker = "sys_platform != 'win32'" },
+    { name = "typing-extensions", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/db/ce/685b8127a326478e05501cb4c9ca23d1cd9f37e16c465a1e832c75aea709/mistral_common-1.9.1.tar.gz", hash = "sha256:550583d70a395c3586cfb748ffab53bd1d7c3409507f0efc0118bff30ffb26e9", size = 6338922, upload-time = "2026-02-12T10:53:41.639Z" }
 wheels = [
@@ -3182,11 +3182,11 @@ wheels = [
 
 [package.optional-dependencies]
 audio = [
-    { name = "soundfile" },
-    { name = "soxr" },
+    { name = "soundfile", marker = "sys_platform != 'win32'" },
+    { name = "soxr", marker = "sys_platform != 'win32'" },
 ]
 image = [
-    { name = "opencv-python-headless", version = "4.13.0.92", source = { registry = "https://pypi.org/simple" } },
+    { name = "opencv-python-headless", version = "4.13.0.92", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -3224,13 +3224,13 @@ name = "mlx-lm"
 version = "0.29.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "jinja2" },
+    { name = "jinja2", marker = "sys_platform != 'win32'" },
     { name = "mlx", marker = "sys_platform == 'darwin'" },
-    { name = "numpy" },
-    { name = "protobuf" },
-    { name = "pyyaml" },
-    { name = "sentencepiece" },
-    { name = "transformers" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "protobuf", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "sentencepiece", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e3/62/f46e1355256a114808517947f8e83ad6be310c7288c551db0fa678f47923/mlx_lm-0.29.1.tar.gz", hash = "sha256:b99180d8f33d33a077b814e550bfb2d8a59ae003d668fd1f4b3fff62a381d34b", size = 232302, upload-time = "2025-12-16T16:58:27.959Z" }
 wheels = [
@@ -3252,18 +3252,18 @@ name = "mlx-vlm"
 version = "0.3.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "datasets" },
-    { name = "fastapi" },
-    { name = "mlx" },
-    { name = "mlx-lm" },
-    { name = "numpy" },
-    { name = "opencv-python" },
-    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "requests" },
-    { name = "soundfile" },
-    { name = "tqdm" },
-    { name = "transformers" },
-    { name = "uvicorn" },
+    { name = "datasets", marker = "sys_platform != 'win32'" },
+    { name = "fastapi", marker = "sys_platform != 'win32'" },
+    { name = "mlx", marker = "sys_platform != 'win32'" },
+    { name = "mlx-lm", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "opencv-python", marker = "sys_platform != 'win32'" },
+    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
+    { name = "soundfile", marker = "sys_platform != 'win32'" },
+    { name = "tqdm", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
+    { name = "uvicorn", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1d/98/6b3c2d1317a317d0df544fe9ab0ef4f233ea85c1e4ac2fe6af7289ea1ee5/mlx_vlm-0.3.9.tar.gz", hash = "sha256:ae5050d0b1a051a29099c3a65efdbf6874bb497e8465734ac1992b6b179135b4", size = 303350, upload-time = "2025-12-03T21:48:24.199Z" }
 wheels = [
@@ -3275,13 +3275,12 @@ name = "mmengine-lite"
 version = "0.10.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "addict" },
-    { name = "numpy" },
-    { name = "pyyaml" },
-    { name = "regex", version = "2026.2.28", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'win32'" },
-    { name = "rich" },
-    { name = "termcolor" },
-    { name = "yapf" },
+    { name = "addict", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "rich", marker = "sys_platform != 'win32'" },
+    { name = "termcolor", marker = "sys_platform != 'win32'" },
+    { name = "yapf", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/48/8d/c10e9acf3019b120cc449a009ef77c3523812ab04268515cdf96c0a1a7c2/mmengine-lite-0.10.7.tar.gz", hash = "sha256:27eb14fc3a908d0cbdc72d9752f425f2713943d9eff3652dafc11c0607e2934c", size = 378125, upload-time = "2025-03-04T12:23:07.988Z" }
 wheels = [
@@ -3646,8 +3645,8 @@ name = "numba"
 version = "0.61.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "llvmlite" },
-    { name = "numpy" },
+    { name = "llvmlite", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/a0/e21f57604304aa03ebb8e098429222722ad99176a4f979d34af1d1ee80da/numba-0.61.2.tar.gz", hash = "sha256:8750ee147940a6637b80ecf7f95062185ad8726c8c28a2295b8ec1160a196f7d", size = 2820615, upload-time = "2025-04-09T02:58:07.659Z" }
 wheels = [
@@ -3761,7 +3760,7 @@ name = "nvidia-cudnn-cu12"
 version = "9.10.2.21"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fa/41/e79269ce215c857c935fd86bcfe91a451a584dfc27f1e068f568b9ad1ab7/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:c9132cc3f8958447b4910a1720036d9eff5928cc3179b0a51fb6d167c6cc87d8", size = 705026878, upload-time = "2025-06-06T21:52:51.348Z" },
@@ -3774,7 +3773,7 @@ name = "nvidia-cufft-cu12"
 version = "11.3.3.83"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/60/bc/7771846d3a0272026c416fbb7e5f4c1f146d6d80704534d0b187dd6f4800/nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:848ef7224d6305cdb2a4df928759dca7b1201874787083b6e7550dd6765ce69a", size = 193109211, upload-time = "2025-03-07T01:44:56.873Z" },
@@ -3806,9 +3805,9 @@ name = "nvidia-cusolver-cu12"
 version = "11.7.3.90"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
-    { name = "nvidia-cusparse-cu12" },
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "nvidia-cusparse-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c8/32/f7cd6ce8a7690544d084ea21c26e910a97e077c9b7f07bf5de623ee19981/nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:db9ed69dbef9715071232caa9b69c52ac7de3a95773c2db65bdba85916e4e5c0", size = 267229841, upload-time = "2025-03-07T01:46:54.356Z" },
@@ -3821,7 +3820,7 @@ name = "nvidia-cusparse-cu12"
 version = "12.5.8.93"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bc/f7/cd777c4109681367721b00a106f491e0d0d15cfa1fd59672ce580ce42a97/nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:9b6c161cb130be1a07a27ea6923df8141f3c295852f4b260c65f18f3e0a091dc", size = 288117129, upload-time = "2025-03-07T01:47:40.407Z" },
@@ -3873,10 +3872,10 @@ name = "ocrmac"
 version = "1.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click" },
-    { name = "pillow", version = "10.4.0", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-19-edgeparse-benchmark-marker'" },
-    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "extra == 'extra-19-edgeparse-benchmark-mineru' or extra != 'extra-19-edgeparse-benchmark-marker'" },
-    { name = "pyobjc-framework-vision" },
+    { name = "click", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pillow", version = "10.4.0", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "(sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-vision", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/5e/07/3e15ab404f75875c5e48c47163300eb90b7409044d8711fc3aaf52503f2e/ocrmac-1.0.1.tar.gz", hash = "sha256:507fe5e4cbd67b2d03f6729a52bbc11f9d0b58241134eb958a5daafd4b9d93d9", size = 1454317, upload-time = "2026-01-08T16:44:26.412Z" }
 wheels = [
@@ -4046,7 +4045,7 @@ name = "openai-harmony"
 version = "0.0.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pydantic" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/3e/92/2d038d096f29179c7c9571b431f9e739f87a487121901725e23fe338dd9d/openai_harmony-0.0.8.tar.gz", hash = "sha256:6e43f98e6c242fa2de6f8ea12eab24af63fa2ed3e89c06341fb9d92632c5cbdf", size = 284777, upload-time = "2025-11-05T19:07:06.727Z" }
 wheels = [
@@ -4417,16 +4416,16 @@ name = "peft"
 version = "0.14.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "accelerate" },
-    { name = "huggingface-hub" },
-    { name = "numpy" },
-    { name = "packaging" },
-    { name = "psutil" },
-    { name = "pyyaml" },
-    { name = "safetensors" },
-    { name = "torch" },
-    { name = "tqdm" },
-    { name = "transformers" },
+    { name = "accelerate", marker = "sys_platform != 'win32'" },
+    { name = "huggingface-hub", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "packaging", marker = "sys_platform != 'win32'" },
+    { name = "psutil", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "safetensors", marker = "sys_platform != 'win32'" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
+    { name = "tqdm", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/21/33/fb0c31eaa8162c01e9250b21aa65d46a5339f17a818a97c68391db2ff44b/peft-0.14.0.tar.gz", hash = "sha256:546d69af7b42f5ef715a3d3261ed818bc917ae6055e5d7e187ed3f2c76ad72dc", size = 411902, upload-time = "2024-12-06T11:37:44.258Z" }
 wheels = [
@@ -4726,8 +4725,8 @@ name = "prometheus-fastapi-instrumentator"
 version = "7.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "prometheus-client" },
-    { name = "starlette" },
+    { name = "prometheus-client", marker = "sys_platform != 'win32'" },
+    { name = "starlette", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/69/6d/24d53033cf93826aa7857699a4450c1c67e5b9c710e925b1ed2b320c04df/prometheus_fastapi_instrumentator-7.1.0.tar.gz", hash = "sha256:be7cd61eeea4e5912aeccb4261c6631b3f227d8924542d79eaf5af3f439cbe5e", size = 20220, upload-time = "2025-03-19T19:35:05.351Z" }
 wheels = [
@@ -5176,7 +5175,7 @@ wheels = [
 
 [package.optional-dependencies]
 email = [
-    { name = "email-validator" },
+    { name = "email-validator", marker = "sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -5249,8 +5248,8 @@ name = "pydantic-extra-types"
 version = "2.11.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pydantic" },
-    { name = "typing-extensions" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "typing-extensions", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/66/71/dba38ee2651f84f7842206adbd2233d8bbdb59fb85e9fa14232486a8c471/pydantic_extra_types-2.11.1.tar.gz", hash = "sha256:46792d2307383859e923d8fcefa82108b1a141f8a9c0198982b3832ab5ef1049", size = 172002, upload-time = "2026-03-16T08:08:03.92Z" }
 wheels = [
@@ -5259,7 +5258,7 @@ wheels = [
 
 [package.optional-dependencies]
 pycountry = [
-    { name = "pycountry" },
+    { name = "pycountry", marker = "sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -5382,7 +5381,7 @@ name = "pyobjc-framework-cocoa"
 version = "12.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyobjc-core" },
+    { name = "pyobjc-core", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz", hash = "sha256:5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640", size = 2772191, upload-time = "2025-11-14T10:13:02.069Z" }
 wheels = [
@@ -5399,8 +5398,8 @@ name = "pyobjc-framework-coreml"
 version = "12.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyobjc-core" },
-    { name = "pyobjc-framework-cocoa" },
+    { name = "pyobjc-core", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-cocoa", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/30/2d/baa9ea02cbb1c200683cb7273b69b4bee5070e86f2060b77e6a27c2a9d7e/pyobjc_framework_coreml-12.1.tar.gz", hash = "sha256:0d1a4216891a18775c9e0170d908714c18e4f53f9dc79fb0f5263b2aa81609ba", size = 40465, upload-time = "2025-11-14T10:14:02.265Z" }
 wheels = [
@@ -5417,8 +5416,8 @@ name = "pyobjc-framework-quartz"
 version = "12.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyobjc-core" },
-    { name = "pyobjc-framework-cocoa" },
+    { name = "pyobjc-core", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-cocoa", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/94/18/cc59f3d4355c9456fc945eae7fe8797003c4da99212dd531ad1b0de8a0c6/pyobjc_framework_quartz-12.1.tar.gz", hash = "sha256:27f782f3513ac88ec9b6c82d9767eef95a5cf4175ce88a1e5a65875fee799608", size = 3159099, upload-time = "2025-11-14T10:21:24.31Z" }
 wheels = [
@@ -5435,10 +5434,10 @@ name = "pyobjc-framework-vision"
 version = "12.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyobjc-core" },
-    { name = "pyobjc-framework-cocoa" },
-    { name = "pyobjc-framework-coreml" },
-    { name = "pyobjc-framework-quartz" },
+    { name = "pyobjc-core", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-cocoa", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-coreml", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "pyobjc-framework-quartz", marker = "sys_platform == 'darwin' or (sys_platform != 'win32' and extra != 'extra-19-edgeparse-benchmark-marker') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra != 'extra-19-edgeparse-benchmark-marker' and extra != 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c2/5a/08bb3e278f870443d226c141af14205ff41c0274da1e053b72b11dfc9fb2/pyobjc_framework_vision-12.1.tar.gz", hash = "sha256:a30959100e85dcede3a786c544e621ad6eb65ff6abf85721f805822b8c5fe9b0", size = 59538, upload-time = "2025-11-14T10:23:21.979Z" }
 wheels = [
@@ -5461,11 +5460,11 @@ wheels = [
 
 [[package]]
 name = "pypdf"
-version = "6.9.1"
+version = "6.10.2"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f9/fb/dc2e8cb006e80b0020ed20d8649106fe4274e82d8e756ad3e24ade19c0df/pypdf-6.9.1.tar.gz", hash = "sha256:ae052407d33d34de0c86c5c729be6d51010bf36e03035a8f23ab449bca52377d", size = 5311551, upload-time = "2026-03-17T10:46:07.876Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/3f/9f2167401c2e94833ca3b69535bad89e533b5de75fefe4197a2c224baec2/pypdf-6.10.2.tar.gz", hash = "sha256:7d09ce108eff6bf67465d461b6ef352dcb8d84f7a91befc02f904455c6eea11d", size = 5315679, upload-time = "2026-04-15T16:37:36.978Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f9/f4/75543fa802b86e72f87e9395440fe1a89a6d149887e3e55745715c3352ac/pypdf-6.9.1-py3-none-any.whl", hash = "sha256:f35a6a022348fae47e092a908339a8f3dc993510c026bb39a96718fc7185e89f", size = 333661, upload-time = "2026-03-17T10:46:06.286Z" },
+    { url = "https://files.pythonhosted.org/packages/0c/d6/1d5c60cc17bbdf37c1552d9c03862fc6d32c5836732a0415b2d637edc2d0/pypdf-6.10.2-py3-none-any.whl", hash = "sha256:aa53be9826655b51c96741e5d7983ca224d898ac0a77896e64636810517624aa", size = 336308, upload-time = "2026-04-15T16:37:34.851Z" },
 ]
 
 [[package]]
@@ -5673,7 +5672,7 @@ name = "pyzmq"
 version = "27.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi", marker = "implementation_name == 'pypy'" },
+    { name = "cffi", marker = "implementation_name == 'pypy' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/04/0b/3c9baedbdf613ecaa7aa07027780b8867f57b6293b6ee50de316c9f3222b/pyzmq-27.1.0.tar.gz", hash = "sha256:ac0765e3d44455adb6ddbf4417dcce460fc40a05978c08efdf2948072f6db540", size = 281750, upload-time = "2025-09-08T23:10:18.157Z" }
 wheels = [
@@ -5847,14 +5846,14 @@ name = "ray"
 version = "2.54.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click" },
-    { name = "filelock" },
-    { name = "jsonschema" },
-    { name = "msgpack" },
-    { name = "packaging" },
-    { name = "protobuf" },
-    { name = "pyyaml" },
-    { name = "requests" },
+    { name = "click", marker = "sys_platform != 'win32'" },
+    { name = "filelock", marker = "sys_platform != 'win32'" },
+    { name = "jsonschema", marker = "sys_platform != 'win32'" },
+    { name = "msgpack", marker = "sys_platform != 'win32'" },
+    { name = "packaging", marker = "sys_platform != 'win32'" },
+    { name = "protobuf", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/08/58/6209b2231947f3c8df09ce1436f1c76c4a11fcafd57c8def852dcbb6d8ef/ray-2.54.0-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:8e39dd56b47a0a1820d5a5a54385bbe54d1d67e1093736d12d8ed4e99d0fa455", size = 70098998, upload-time = "2026-02-18T04:04:58.801Z" },
@@ -5872,7 +5871,7 @@ wheels = [
 
 [package.optional-dependencies]
 cgraph = [
-    { name = "cupy-cuda12x", marker = "sys_platform != 'darwin'" },
+    { name = "cupy-cuda12x", marker = "sys_platform != 'darwin' and sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -6171,9 +6170,9 @@ name = "rich-toolkit"
 version = "0.19.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click" },
-    { name = "rich" },
-    { name = "typing-extensions" },
+    { name = "click", marker = "sys_platform != 'win32'" },
+    { name = "rich", marker = "sys_platform != 'win32'" },
+    { name = "typing-extensions", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/ba/dae9e3096651042754da419a4042bc1c75e07d615f9b15066d738838e4df/rich_toolkit-0.19.7.tar.gz", hash = "sha256:133c0915872da91d4c25d85342d5ec1dfacc69b63448af1a08a0d4b4f23ef46e", size = 195877, upload-time = "2026-02-24T16:06:20.555Z" }
 wheels = [
@@ -6775,8 +6774,8 @@ name = "sentry-sdk"
 version = "2.55.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "certifi" },
-    { name = "urllib3" },
+    { name = "certifi", marker = "sys_platform != 'win32'" },
+    { name = "urllib3", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e9/b8/285293dc60fc198fffc3fcdbc7c6d4e646e0f74e61461c355d40faa64ceb/sentry_sdk-2.55.0.tar.gz", hash = "sha256:3774c4d8820720ca4101548131b9c162f4c9426eb7f4d24aca453012a7470f69", size = 424505, upload-time = "2026-03-17T14:15:51.707Z" }
 wheels = [
@@ -7025,8 +7024,8 @@ name = "soundfile"
 version = "0.13.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi" },
-    { name = "numpy" },
+    { name = "cffi", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e1/41/9b873a8c055582859b239be17902a85339bec6a30ad162f98c9b0288a2cc/soundfile-0.13.1.tar.gz", hash = "sha256:b2c68dab1e30297317080a5b43df57e302584c49e2942defdde0acccc53f0e5b", size = 46156, upload-time = "2025-01-25T09:17:04.831Z" }
 wheels = [
@@ -7053,7 +7052,7 @@ name = "soxr"
 version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "numpy" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/7e/f4b461944662ad75036df65277d6130f9411002bfb79e9df7dff40a31db9/soxr-1.0.0.tar.gz", hash = "sha256:e07ee6c1d659bc6957034f4800c60cb8b98de798823e34d2a2bba1caa85a4509", size = 171415, upload-time = "2025-09-07T13:22:21.317Z" }
 wheels = [
@@ -7279,8 +7278,8 @@ name = "tiktoken"
 version = "0.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "regex", version = "2026.2.28", source = { registry = "https://pypi.org/simple" } },
-    { name = "requests" },
+    { name = "regex", version = "2026.2.28", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7d/ab/4d017d0f76ec3171d469d80fc03dfbb4e48a4bcaddaa831b31d526f05edc/tiktoken-0.12.0.tar.gz", hash = "sha256:b18ba7ee2b093863978fcb14f74b3707cdc8d4d4d3836853ce7ec60772139931", size = 37806, upload-time = "2025-10-06T20:22:45.419Z" }
 wheels = [
@@ -7415,7 +7414,7 @@ name = "torchaudio"
 version = "2.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "torch" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/dd/bf/6b01ef3defb8d0a772c863588711e9b2b011c27d6b37c1b9d15a359c8442/torchaudio-2.8.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c9276857d241c6de257af765c0f51fc011af38cb725401495121b280913007cf", size = 1859094, upload-time = "2025-08-06T14:58:35.078Z" },
@@ -7602,7 +7601,7 @@ name = "triton"
 version = "3.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
+    { name = "setuptools", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux' and sys_platform != 'win32') or (sys_platform == 'darwin' and extra == 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'darwin' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'linux' and extra != 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra == 'extra-19-edgeparse-benchmark-marker') or (sys_platform == 'win32' and extra != 'extra-19-edgeparse-benchmark-mineru') or (sys_platform == 'linux' and extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7d/39/43325b3b651d50187e591eefa22e236b2981afcebaefd4f2fc0ea99df191/triton-3.4.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7b70f5e6a41e52e48cfc087436c8a28c17ff98db369447bcaff3b887a3ab4467", size = 155531138, upload-time = "2025-07-30T19:58:29.908Z" },
@@ -7716,13 +7715,12 @@ wheels = [
 
 [package.optional-dependencies]
 standard = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
-    { name = "httptools" },
-    { name = "python-dotenv" },
-    { name = "pyyaml" },
+    { name = "httptools", marker = "sys_platform != 'win32'" },
+    { name = "python-dotenv", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
     { name = "uvloop", marker = "platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'" },
-    { name = "watchfiles" },
-    { name = "websockets" },
+    { name = "watchfiles", marker = "sys_platform != 'win32'" },
+    { name = "websockets", marker = "sys_platform != 'win32'" },
 ]
 
 [[package]]
@@ -7783,61 +7781,61 @@ name = "vllm"
 version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiohttp" },
-    { name = "blake3" },
-    { name = "cachetools" },
-    { name = "cbor2" },
-    { name = "cloudpickle" },
-    { name = "compressed-tensors" },
-    { name = "depyf" },
-    { name = "diskcache" },
-    { name = "einops" },
-    { name = "fastapi", extra = ["standard"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "filelock" },
-    { name = "gguf" },
-    { name = "lark" },
-    { name = "llguidance", marker = "platform_machine == 'aarch64' or platform_machine == 'arm64' or platform_machine == 'x86_64'" },
-    { name = "lm-format-enforcer" },
-    { name = "mistral-common", extra = ["audio", "image"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "msgspec" },
-    { name = "ninja" },
-    { name = "numba" },
-    { name = "numpy" },
-    { name = "openai", version = "2.29.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "openai-harmony" },
-    { name = "opencv-python-headless", version = "4.13.0.92", source = { registry = "https://pypi.org/simple" } },
-    { name = "outlines-core" },
-    { name = "partial-json-parser" },
-    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "prometheus-client" },
-    { name = "prometheus-fastapi-instrumentator" },
-    { name = "protobuf" },
-    { name = "psutil" },
-    { name = "py-cpuinfo" },
-    { name = "pybase64" },
-    { name = "pydantic" },
-    { name = "python-json-logger" },
-    { name = "pyyaml" },
-    { name = "pyzmq" },
-    { name = "ray", extra = ["cgraph"], marker = "extra == 'extra-19-edgeparse-benchmark-mineru'" },
-    { name = "regex", version = "2026.2.28", source = { registry = "https://pypi.org/simple" } },
-    { name = "requests" },
-    { name = "scipy" },
-    { name = "sentencepiece" },
-    { name = "setproctitle" },
-    { name = "setuptools", marker = "python_full_version >= '3.12'" },
-    { name = "six", marker = "python_full_version >= '3.12'" },
-    { name = "tiktoken" },
-    { name = "tokenizers" },
-    { name = "torch" },
-    { name = "torchaudio" },
-    { name = "torchvision" },
-    { name = "tqdm" },
-    { name = "transformers" },
-    { name = "typing-extensions" },
-    { name = "watchfiles" },
+    { name = "aiohttp", marker = "sys_platform != 'win32'" },
+    { name = "blake3", marker = "sys_platform != 'win32'" },
+    { name = "cachetools", marker = "sys_platform != 'win32'" },
+    { name = "cbor2", marker = "sys_platform != 'win32'" },
+    { name = "cloudpickle", marker = "sys_platform != 'win32'" },
+    { name = "compressed-tensors", marker = "sys_platform != 'win32'" },
+    { name = "depyf", marker = "sys_platform != 'win32'" },
+    { name = "diskcache", marker = "sys_platform != 'win32'" },
+    { name = "einops", marker = "sys_platform != 'win32'" },
+    { name = "fastapi", extra = ["standard"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "filelock", marker = "sys_platform != 'win32'" },
+    { name = "gguf", marker = "sys_platform != 'win32'" },
+    { name = "lark", marker = "sys_platform != 'win32'" },
+    { name = "llguidance", marker = "(platform_machine == 'aarch64' and sys_platform != 'win32') or (platform_machine == 'arm64' and sys_platform != 'win32') or (platform_machine == 'x86_64' and sys_platform != 'win32')" },
+    { name = "lm-format-enforcer", marker = "sys_platform != 'win32'" },
+    { name = "mistral-common", extra = ["audio", "image"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "msgspec", marker = "sys_platform != 'win32'" },
+    { name = "ninja", marker = "sys_platform != 'win32'" },
+    { name = "numba", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "openai", version = "2.29.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "openai-harmony", marker = "sys_platform != 'win32'" },
+    { name = "opencv-python-headless", version = "4.13.0.92", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "outlines-core", marker = "sys_platform != 'win32'" },
+    { name = "partial-json-parser", marker = "sys_platform != 'win32'" },
+    { name = "pillow", version = "11.3.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "prometheus-client", marker = "sys_platform != 'win32'" },
+    { name = "prometheus-fastapi-instrumentator", marker = "sys_platform != 'win32'" },
+    { name = "protobuf", marker = "sys_platform != 'win32'" },
+    { name = "psutil", marker = "sys_platform != 'win32'" },
+    { name = "py-cpuinfo", marker = "sys_platform != 'win32'" },
+    { name = "pybase64", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "python-json-logger", marker = "sys_platform != 'win32'" },
+    { name = "pyyaml", marker = "sys_platform != 'win32'" },
+    { name = "pyzmq", marker = "sys_platform != 'win32'" },
+    { name = "ray", extra = ["cgraph"], marker = "(sys_platform != 'win32' and extra == 'extra-19-edgeparse-benchmark-mineru') or (extra == 'extra-19-edgeparse-benchmark-marker' and extra == 'extra-19-edgeparse-benchmark-mineru')" },
+    { name = "regex", version = "2026.2.28", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'win32'" },
+    { name = "requests", marker = "sys_platform != 'win32'" },
+    { name = "scipy", marker = "sys_platform != 'win32'" },
+    { name = "sentencepiece", marker = "sys_platform != 'win32'" },
+    { name = "setproctitle", marker = "sys_platform != 'win32'" },
+    { name = "setuptools", marker = "python_full_version >= '3.12' and sys_platform != 'win32'" },
+    { name = "six", marker = "python_full_version >= '3.12' and sys_platform != 'win32'" },
+    { name = "tiktoken", marker = "sys_platform != 'win32'" },
+    { name = "tokenizers", marker = "sys_platform != 'win32'" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
+    { name = "torchaudio", marker = "sys_platform != 'win32'" },
+    { name = "torchvision", marker = "sys_platform != 'win32'" },
+    { name = "tqdm", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
+    { name = "typing-extensions", marker = "sys_platform != 'win32'" },
+    { name = "watchfiles", marker = "sys_platform != 'win32'" },
     { name = "xformers", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "xgrammar", marker = "platform_machine == 'aarch64' or platform_machine == 'arm64' or platform_machine == 'x86_64'" },
+    { name = "xgrammar", marker = "(platform_machine == 'aarch64' and sys_platform != 'win32') or (platform_machine == 'arm64' and sys_platform != 'win32') or (platform_machine == 'x86_64' and sys_platform != 'win32')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/82/5a/36d2351206f4d8d871b10780f874d03957985e08298d430cc837723e07af/vllm-0.11.0.tar.gz", hash = "sha256:f435a64c24e9c4178d657a76f8edd8548ddc444012f7d06a9f79ac3a6392bfae", size = 10822208, upload-time = "2025-10-04T01:39:57.798Z" }
 wheels = [
@@ -7850,7 +7848,7 @@ name = "watchfiles"
 version = "1.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "anyio" },
+    { name = "anyio", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz", hash = "sha256:a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2", size = 94440, upload-time = "2025-10-14T15:06:21.08Z" }
 wheels = [
@@ -8012,13 +8010,13 @@ version = "0.1.25"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mlx-lm", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
-    { name = "ninja" },
-    { name = "numpy" },
-    { name = "pydantic" },
-    { name = "torch" },
-    { name = "transformers" },
+    { name = "ninja", marker = "sys_platform != 'win32'" },
+    { name = "numpy", marker = "sys_platform != 'win32'" },
+    { name = "pydantic", marker = "sys_platform != 'win32'" },
+    { name = "torch", marker = "sys_platform != 'win32'" },
+    { name = "transformers", marker = "sys_platform != 'win32'" },
     { name = "triton", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
-    { name = "typing-extensions" },
+    { name = "typing-extensions", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f2/a9/dc3c63cf7f082d183711e46ef34d10d8a135c2319dc581905d79449f52ea/xgrammar-0.1.25.tar.gz", hash = "sha256:70ce16b27e8082f20808ed759b0733304316facc421656f0f30cfce514b5b77a", size = 2297187, upload-time = "2025-09-21T05:58:58.942Z" }
 wheels = [
@@ -8163,7 +8161,7 @@ name = "yapf"
 version = "0.43.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "platformdirs" },
+    { name = "platformdirs", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/23/97/b6f296d1e9cc1ec25c7604178b48532fa5901f721bcf1b8d8148b13e5588/yapf-0.43.0.tar.gz", hash = "sha256:00d3aa24bfedff9420b2e0d5d9f5ab6d9d4268e72afbf59bb3fa542781d5218e", size = 254907, upload-time = "2024-11-14T00:11:41.584Z" }
 wheels = [
@@ -8175,9 +8173,9 @@ name = "yarl"
 version = "1.23.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "idna" },
-    { name = "multidict" },
-    { name = "propcache" },
+    { name = "idna", marker = "sys_platform != 'win32'" },
+    { name = "multidict", marker = "sys_platform != 'win32'" },
+    { name = "propcache", marker = "sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz", hash = "sha256:53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5", size = 194676, upload-time = "2026-03-01T22:07:53.373Z" }
 wheels = [
