@@ -10,5 +10,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 edgeparse-core = { path = "../edgeparse-core" }
-pyo3 = { version = "0.23", features = ["extension-module"] }
+pyo3 = { version = "0.29", features = ["extension-module"] }
 serde_json = { workspace = true }
