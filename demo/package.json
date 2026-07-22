@@ -26,7 +26,7 @@
     "@codemirror/view": "^6.40.0",
     "@edgeparse/edgeparse-wasm": "file:../crates/edgeparse-wasm/pkg",
     "codemirror": "^6.0.2",
-    "dompurify": "^3.3.3",
+    "dompurify": "^3.4.12",
     "marked": "^17.0.5",
     "pdfjs-dist": "^5.5.207"
   }
